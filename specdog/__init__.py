@@ -1,0 +1,1 @@
+from specdog import main

@@ -34,7 +34,7 @@ def run_specdog(path, extension, command):
         asyncore.ExitNow()
         sys.exit(0)
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 2:
         print >> sys.stderr, 'Usage: specdog "<command>"'
         sys.exit(1)
