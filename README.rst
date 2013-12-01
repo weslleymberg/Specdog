@@ -6,4 +6,8 @@ Speddoc do not rely on test running tools. All you need to do is to say what com
 
 Example::
 
-    specdog "<command-to-run-your-tests>" 
+    specdog "<command-to-run-your-tests>"
+
+Installing::
+    
+    pip install http://github.com/weslleymberg/Specdog/tarball/master
