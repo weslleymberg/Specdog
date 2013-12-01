@@ -1,4 +1,5 @@
 import sys
+import asyncore
 import pyinotify
 import subprocess
 
@@ -21,9 +22,14 @@ class OnProjectChangeHandler(pyinotify.ProcessEvent):
 def auto_command(path, extension, command):
     watch_manager = pyinotify.WatchManager()
     handler = OnProjectChangeHandler(path=path, extension=extension, command=command)
-    notifier = pyinotify.Notifier(watch_manager, default_proc_fun=handler)
+    pyinotify.AsyncNotifier(watch_manager, handler)
     watch_manager.add_watch(path, pyinotify.ALL_EVENTS, rec=True, auto_add=True)
-    notifier.loop()
+    try:
+        asyncore.loop()
+    except KeyboardInterrupt:
+        print >> sys.stdout, "Exiting..."
+        asyncore.ExitNow()
+        sys.exit(0)
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
