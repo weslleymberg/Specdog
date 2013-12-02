@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name = "specdog",
-      version = "0.0.1",
+      version = "1.0.0",
       description = "Simple tool to aumomate test routines execution",
       author = "Weslleymberg Lisboa",
       author_email = "weslleym.lisboa@gmail.com",
