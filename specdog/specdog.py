@@ -45,13 +45,4 @@ def main():
     parser.add_argument("command", help="Command to be executed", type=str)
     parser.add_argument("--ext", help="File extension to watch", type=str, default=".py")
     args = parser.parse_args()
-
-    #if len(sys.argv) != 2:
-    #    print >> sys.stderr, 'Usage: specdog "<command>"'
-    #    sys.exit(1)
-
-    #path = "."
-    #extension = ".py"
-    #command = sys.argv[1]
-
     run_specdog(".", args.ext, args.command)
