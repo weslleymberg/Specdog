@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(name = "specdog",
-      version = "1.0.0",
-      description = "Simple tool to aumomate test routines execution",
+      version = "1.1.0",
+      description = "Simple tool to automate test routines execution",
       author = "Weslleymberg Lisboa",
       author_email = "weslleym.lisboa@gmail.com",
       url = "http://github.com/weslleymberg/Specdog",
