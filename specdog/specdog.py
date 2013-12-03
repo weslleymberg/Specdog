@@ -2,6 +2,7 @@ import sys
 import asyncore
 import pyinotify
 import subprocess
+from datetime import datetime
 
 class OnProjectChangeHandler(pyinotify.ProcessEvent):
     def my_init(self, path, extension, command):
@@ -13,7 +14,8 @@ class OnProjectChangeHandler(pyinotify.ProcessEvent):
         print >> sys.stdout, 'Calling "%s"...' %(self.command)
         command_list = self.command.split(' ')
         status = subprocess.call(command_list)
-        print >> sys.stdout, "Your command finished with status %i\nWaiting for new events..." %(status)
+        print >> sys.stdout, "Your command finished with status %i at %s \
+                             \nWaiting for new events..." %(status, str(datetime.now()))
 
     def process_IN_MODIFY(self, event):
         if not event.pathname.endswith(self.extension):
