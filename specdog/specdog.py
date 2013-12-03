@@ -12,7 +12,8 @@ class OnProjectChangeHandler(pyinotify.ProcessEvent):
     def _run_command(self):
         print >> sys.stdout, 'Calling "%s"...' %(self.command)
         command_list = self.command.split(' ')
-        subprocess.call(command_list)
+        status = subprocess.call(command_list)
+        print >> sys.stdout, "Your command finished with status %i\nWaiting for new events..." %(status)
 
     def process_IN_MODIFY(self, event):
         if not event.pathname.endswith(self.extension):
