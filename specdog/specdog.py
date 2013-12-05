@@ -17,7 +17,7 @@ class OnProjectChangeHandler(pyinotify.ProcessEvent):
         print >> sys.stdout, "Your command finished with status %i at %s \
                              \nWaiting for new events..." %(status, str(datetime.now()))
 
-    def process_IN_MODIFY(self, event):
+    def process_IN_CLOSE_WRITE(self, event):
         if not event.pathname.endswith(self.extension):
             return
         sys.stdout.write("\x1b[2J\x1b[H")
