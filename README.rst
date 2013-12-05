@@ -19,3 +19,7 @@ PS.: The default file extension is .py
 Installing::
     
     pip install http://github.com/weslleymberg/Specdog/tarball/master
+
+Updating::
+
+    pip install --upgrade http://github.com/weslleymberg/Specdog/tarball/master    
