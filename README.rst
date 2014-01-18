@@ -1,8 +1,7 @@
 Specdog
 =======
 
-An automatic spec runner.
-Specdog do not rely on test running tools. All you need to do is to say which command should be executed every time you make a change on your project.
+An automatic spec runner. All you need to do is to say which command should be executed every time you make a change on your project.
 
 Usage::
 
